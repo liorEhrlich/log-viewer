@@ -2,41 +2,53 @@ import React from "react";
 import styled from "styled-components";
 
 import BuildStatusLabel from "./BuildStatusLabel";
+import { convertEpochToDate } from "./utils";
 
-const BuildOverview = ({ buildStatus}) => (
-  <Wrapper>
-    <BuildStatusLabel status={buildStatus} />
+const BuildOverview = ({ buildStatus, buildSteps, buildStart }) => {
+  const buildStartTime = convertEpochToDate(buildStart);
 
-    <div>
-      <DetailTitle>Steps</DetailTitle>
-      <DetailValue></DetailValue>
-    </div>
+  return (
+    <Wrapper>
+      <BuildStatusLabel status={buildStatus} />
 
-    <div>
-      <DetailTitle>Start Time</DetailTitle>
-      <DetailValue></DetailValue>
-    </div>
+      <Details>
+        <DetailTitle>Steps</DetailTitle>
+        <DetailValue>{buildSteps}</DetailValue>
+      </Details>
 
-    <div>
-      <DetailTitle>Duration</DetailTitle>
-      <DetailValue></DetailValue>
-    </div>
-  </Wrapper>
-);
+      <Details>
+        <DetailTitle>Start Time</DetailTitle>
+        <DetailValue>{buildStartTime}</DetailValue>
+      </Details>
+
+      <Details>
+        <DetailTitle>Duration</DetailTitle>
+        <DetailValue></DetailValue>
+      </Details>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.background};
-  height: 100px;
+  border-bottom: 1px solid ${props => props.theme.primary};
+  height: 80px;
   display: flex;
   align-items: center;
   padding: 0 20px;
 `;
 
+const Details = styled.div`
+  margin-left: 15px;
+`;
+
 const DetailTitle = styled.div`
   font-weight: bold;
-`
+  text-align: center;
+`;
 
 const DetailValue = styled.div`
-`
+  text-align: center;
+`;
 
 export default BuildOverview;

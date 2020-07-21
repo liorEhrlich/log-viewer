@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
-import logs from "./logs.json"
+import logs from "./logs.json";
 import theme from "./theme";
 import BuildOverview from "./BuildOverview";
 import LogsView from "./LogsView";
@@ -15,18 +15,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  console.log(logs.status)
+  console.log(logs);
   return (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
 
-    <Title>Build Progress View </Title>
+      <Title>Build Progress View </Title>
 
-    <BuildOverview buildStatus={logs.status} />
+      <BuildOverview
+        buildStatus={logs.status}
+        buildSteps={logs.steps.length}
+        buildStart={logs.data.started}
+      />
 
-    <LogsView />
-  </ThemeProvider>
-)};
+      <LogsView />
+    </ThemeProvider>
+  );
+};
 
 const Title = styled.div`
   background-color: ${props => props.theme.primary};
