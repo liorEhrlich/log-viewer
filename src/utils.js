@@ -5,3 +5,9 @@ export const streamLogs = logs => {
     }, i * 2000);
   });
 };
+
+export const convertEpochToDate = epoch => {
+  const milliseconds = epoch * 1000;
+  const epochDate = new Date(milliseconds * 1000);
+  return epochDate.toTimeString();
+};
