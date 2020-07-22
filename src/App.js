@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
@@ -14,22 +14,31 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
+const App = () => {
+  const [currentStep, setCurrentStep] = useState(0);
 
-    <Title>Build Progress View </Title>
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
 
-    <BuildOverview
-      buildStatus={logs.status}
-      buildSteps={logs.steps.length}
-      buildStart={logs.data.started}
-      buildFinish={logs.data.finished}
-    />
+      <Title>Build Progress View </Title>
 
-    <StepsList stepsList={logs.steps} />
-  </ThemeProvider>
-);
+      <BuildOverview
+        buildStatus={logs.status}
+        buildSteps={logs.steps.length}
+        buildStart={logs.data.started}
+        buildFinish={logs.data.finished}
+        currentStep={currentStep}
+      />
+
+      <StepsList
+        stepsList={logs.steps}
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+      />
+    </ThemeProvider>
+  );
+};
 
 const Title = styled.div`
   background-color: ${(props) => props.theme.primary};
