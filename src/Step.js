@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import StepLogs from "./StepLogs";
+import { STEP_STATUSES } from "./constants";
+import StatusLabel from "./StatusLabel";
 
-const Step = ({ step }) => (
-  <Wrapper>
-    <StepTitle>{step.name} =></StepTitle>
-    <StepLogs logs={step.logs} />
-  </Wrapper>
-);
+const Step = ({ step, onStepComplete }) => {
+  const [stepStatus, setStepStatus] = useState(STEP_STATUSES["running"]);
+
+  const onStepCompleteUpdateStatus = () => {
+      onStepComplete();
+      setStepStatus(step.status);
+  };
+  return (
+    <Wrapper>
+      <StatusLabel status={STEP_STATUSES[stepStatus]}>
+        {stepStatus}
+      </StatusLabel>
+      <StepTitle>{step.name} =></StepTitle>
+      <StepLogs logs={step.logs} onComplete={onStepCompleteUpdateStatus} />
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   width: 100%;
@@ -25,6 +38,7 @@ const Wrapper = styled.div`
 const StepTitle = styled.div`
   white-space: nowrap;
   margin-bottom: 15px;
+  margin-top: 10px;
   padding: 15px;
   border: 2px solid lightgrey;
   border-radius: 4px;
