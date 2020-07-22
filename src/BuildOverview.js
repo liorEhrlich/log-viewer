@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import BuildStatusLabel from "./BuildStatusLabel";
-import { convertEpochToDate } from "./utils";
+import { convertEpochToDateString } from "./utils";
 
 const BuildOverview = ({ buildStatus, buildSteps, buildStart }) => {
-  const buildStartTime = convertEpochToDate(buildStart);
+  const buildStartTime = convertEpochToDateString(buildStart);
 
   return (
     <Wrapper>

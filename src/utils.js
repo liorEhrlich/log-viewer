@@ -1,3 +1,5 @@
+import {format, fromUnixTime} from "date-fns";
+
 export const streamLogs = logs => {
   Object.keys(logs).forEach((name, i) => {
     setTimeout(() => {
@@ -6,8 +8,4 @@ export const streamLogs = logs => {
   });
 };
 
-export const convertEpochToDate = epoch => {
-  const milliseconds = epoch * 1000;
-  const epochDate = new Date(milliseconds * 1000);
-  return epochDate.toTimeString();
-};
+export const convertEpochToDateString = (date) => format(fromUnixTime(date), 'dd/MM/yy HH:m').toString();
