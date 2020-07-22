@@ -8,8 +8,8 @@ const BuildStatusLabel = ({ status }) => (
 const Wrapper = styled.div`
   display: inline-block;
   border-radius: 4px;
-  background-color: ${props => props.theme[props.status]};
-  color: ${props => props.theme.background};
+  background-color: ${(props) => props.theme[props.status]};
+  color: ${(props) => props.theme.background};
   padding: 5px 10px;
 `;
 
