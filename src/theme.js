@@ -5,7 +5,7 @@ const theme = {
   secondaryBackground: "#F5FAF9",
   success: "#11b560",
   fail: "#b51114",
-  pending: "#e4e015",
+  running: "#e4e015",
   terminalBackground: "#282D33",
   terminalText: "#95979A"
 };
