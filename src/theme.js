@@ -6,6 +6,8 @@ const theme = {
   success: "#11b560",
   fail: "#b51114",
   pending: "#e4e015",
+  terminalBackground: "#282D33",
+  terminalText: "#95979A"
 };
 
 export default theme;
