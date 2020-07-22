@@ -2,10 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 import BuildStatusLabel from "./BuildStatusLabel";
-import { convertEpochToDateString } from "./utils";
+import {
+  convertEpochToDateString,
+  getDurationBetweenEpochTimes,
+} from "./utils";
 
-const BuildOverview = ({ buildStatus, buildSteps, buildStart }) => {
+const BuildOverview = ({
+  buildStatus,
+  buildSteps,
+  buildStart,
+  buildFinish,
+}) => {
   const buildStartTime = convertEpochToDateString(buildStart);
+  const buildDuration = getDurationBetweenEpochTimes(buildFinish, buildStart);
 
   return (
     <Wrapper>
@@ -23,15 +32,15 @@ const BuildOverview = ({ buildStatus, buildSteps, buildStart }) => {
 
       <Details>
         <DetailTitle>Duration</DetailTitle>
-        <DetailValue></DetailValue>
+        <DetailValue>{buildDuration}</DetailValue>
       </Details>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.background};
-  border-bottom: 1px solid ${props => props.theme.primary};
+  background-color: ${(props) => props.theme.background};
+  border-bottom: 1px solid ${(props) => props.theme.primary};
   height: 80px;
   display: flex;
   align-items: center;

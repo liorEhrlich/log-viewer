@@ -26,6 +26,7 @@ const App = () => {
         buildStatus={logs.status}
         buildSteps={logs.steps.length}
         buildStart={logs.data.started}
+        buildFinish={logs.data.finished}
       />
 
       <LogsView />
@@ -34,9 +35,9 @@ const App = () => {
 };
 
 const Title = styled.div`
-  background-color: ${props => props.theme.primary};
+  background-color: ${(props) => props.theme.primary};
   height: 60px;
-  color: ${props => props.theme.background};
+  color: ${(props) => props.theme.background};
   font-weight: bold;
   padding: 0 20px;
   display: flex;
