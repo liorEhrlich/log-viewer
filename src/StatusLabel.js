@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const BuildStatusLabel = ({ status }) => (
+const StatusLabel = ({ status }) => (
   <Wrapper status={status}>{status}</Wrapper>
 );
 
@@ -13,4 +13,4 @@ const Wrapper = styled.div`
   padding: 5px 10px;
 `;
 
-export default BuildStatusLabel;
+export default StatusLabel;
