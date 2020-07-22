@@ -9,8 +9,8 @@ const Step = ({ step, onStepComplete }) => {
   const [areLogsMinimized, setAreLogsMinimized] = useState(false);
 
   const onStepCompleteUpdateStatus = () => {
-      onStepComplete();
-      setStepStatus(step.status);
+    onStepComplete();
+    setStepStatus(step.status);
   };
   return (
     <Wrapper>
