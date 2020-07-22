@@ -14,25 +14,22 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const App = () => {
-  console.log(logs);
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
 
-      <Title>Build Progress View </Title>
+    <Title>Build Progress View </Title>
 
-      <BuildOverview
-        buildStatus={logs.status}
-        buildSteps={logs.steps.length}
-        buildStart={logs.data.started}
-        buildFinish={logs.data.finished}
-      />
+    <BuildOverview
+      buildStatus={logs.status}
+      buildSteps={logs.steps.length}
+      buildStart={logs.data.started}
+      buildFinish={logs.data.finished}
+    />
 
-      <StepsList stepsList={logs.steps} />
-    </ThemeProvider>
-  );
-};
+    <StepsList stepsList={logs.steps} />
+  </ThemeProvider>
+);
 
 const Title = styled.div`
   background-color: ${(props) => props.theme.primary};
