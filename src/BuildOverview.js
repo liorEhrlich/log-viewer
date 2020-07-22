@@ -54,6 +54,7 @@ const Details = styled.div`
 const DetailTitle = styled.div`
   font-weight: bold;
   text-align: center;
+  color: grey;
 `;
 
 const DetailValue = styled.div`
