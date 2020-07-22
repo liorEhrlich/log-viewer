@@ -6,6 +6,7 @@ import StatusLabel from "./StatusLabel";
 
 const Step = ({ step, onStepComplete }) => {
   const [stepStatus, setStepStatus] = useState(STEP_STATUSES["running"]);
+  const [areLogsMinimized, setAreLogsMinimized] = useState(false);
 
   const onStepCompleteUpdateStatus = () => {
       onStepComplete();
@@ -13,11 +14,20 @@ const Step = ({ step, onStepComplete }) => {
   };
   return (
     <Wrapper>
-      <StatusLabel status={STEP_STATUSES[stepStatus]}>
-        {stepStatus}
-      </StatusLabel>
-      <StepTitle>{step.name} =></StepTitle>
-      <StepLogs logs={step.logs} onComplete={onStepCompleteUpdateStatus} />
+      <StatusLabel status={STEP_STATUSES[stepStatus]}>{stepStatus}</StatusLabel>
+
+      <StepTitle>
+        <MinimizeLogs
+          onClick={() =>
+            setAreLogsMinimized((areLogsMinimized) => !areLogsMinimized)
+          }
+        >
+          {areLogsMinimized ? "+" : "-"}
+        </MinimizeLogs>
+        {step.name} =>
+      </StepTitle>
+
+      <StepLogs logs={step.logs} onComplete={onStepCompleteUpdateStatus} isMinimized={areLogsMinimized}/>
     </Wrapper>
   );
 };
@@ -33,6 +43,13 @@ const Wrapper = styled.div`
   :hover {
     box-shadow: 3px 0px 16px -2px ${(props) => props.theme.primary};
   }
+`;
+
+const MinimizeLogs = styled.div`
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+  cursor: pointer;
 `;
 
 const StepTitle = styled.div`
