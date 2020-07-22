@@ -2,23 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import StepLogs from "./StepLogs";
 
-const Step = ({ step }) => {
-  return (
-    <Wrapper>
-      <StepTitle>{step.name} =></StepTitle>
-      <StepLogs logs={step.logs} />
-    </Wrapper>
-  );
-};
+const Step = ({ step }) => (
+  <Wrapper>
+    <StepTitle>{step.name} =></StepTitle>
+    <StepLogs logs={step.logs} />
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
-  min-width: 200px;
+  width: 100%;
   border: 2px solid ${(props) => props.theme.primary};
   border-radius: 4px;
   margin-right: 30px;
   margin-bottom: 20px;
   padding: 10px;
   opacity: 0.5;
+
+  :hover {
+    box-shadow: 3px 0px 16px -2px ${(props) => props.theme.primary};
+  }
 `;
 
 const StepTitle = styled.div`
