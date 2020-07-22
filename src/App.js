@@ -5,7 +5,7 @@ import styled from "styled-components";
 import logs from "./logs.json";
 import theme from "./theme";
 import BuildOverview from "./BuildOverview";
-import LogsView from "./LogsView";
+import StepsList from "./StepsList";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -29,7 +29,7 @@ const App = () => {
         buildFinish={logs.data.finished}
       />
 
-      <LogsView />
+      <StepsList stepsList={logs.steps} />
     </ThemeProvider>
   );
 };
