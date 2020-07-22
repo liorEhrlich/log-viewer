@@ -16,7 +16,7 @@ export const streamLogs = (logs) => {
 export const convertEpochToDateString = (date) =>
   format(fromUnixTime(date), "dd/MM/yy HH:m").toString();
 
-export const getDurationBetweenEpochTimes = (laterEpoch, earlyEpoch) =>
+export const getMinutesBetweenEpochTimes = (laterEpoch, earlyEpoch) =>
   formatDuration({
     minutes: differenceInMinutes(
       fromUnixTime(laterEpoch),
