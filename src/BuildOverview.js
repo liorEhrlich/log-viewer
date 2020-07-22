@@ -1,28 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
-import BuildStatusLabel from "./BuildStatusLabel";
+import StatusLabel from "./StatusLabel";
 import {
   convertEpochToDateString,
   getMinutesBetweenEpochTimes,
 } from "./utils/utils";
+import {STEP_STATUSES} from "./constants";
 
 const BuildOverview = ({
   buildStatus,
   buildSteps,
   buildStart,
   buildFinish,
+  currentStep,
 }) => {
   const buildStartTime = convertEpochToDateString(buildStart);
   const buildDuration = getMinutesBetweenEpochTimes(buildFinish, buildStart);
 
   return (
     <Wrapper>
-      <BuildStatusLabel status={buildStatus} />
+      <StatusLabel status={currentStep + 1 === buildSteps ? buildStatus : STEP_STATUSES['running']} />
 
       <Details>
         <DetailTitle>Steps</DetailTitle>
-        <DetailValue>{buildSteps}</DetailValue>
+        <DetailValue>{`${currentStep + 1} / ${buildSteps}`}</DetailValue>
       </Details>
 
       <Details>
