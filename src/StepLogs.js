@@ -21,18 +21,25 @@ const StepLogs = ({ logs }) => {
   );
 
   return (
-    <>
+    <Wrapper>
       {shownLogs.map((log, index) => (
         <Log key={`${log} ${index}`}>{log}</Log>
       ))}
-    </>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  background-color: ${props => props.theme.terminalBackground};
+  height: 200px;
+  overflow-y: scroll;
+  padding: 10px;
+`;
+
 const Log = styled.div`
-  color: dimgrey;
+  color: ${props => props.theme.terminalText};
   margin-bottom: 5px;
-  padding: 5px;
+  font-size: 14px;
 `;
 
 export default StepLogs;

@@ -16,7 +16,6 @@ const Wrapper = styled.div`
   margin-right: 30px;
   margin-bottom: 20px;
   padding: 10px;
-  opacity: 0.5;
 
   :hover {
     box-shadow: 3px 0px 16px -2px ${(props) => props.theme.primary};
