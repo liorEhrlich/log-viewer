@@ -1,0 +1,1 @@
+export const STEP_STATUSES = {running: 'running', success: 'success', fail: 'fail'};
