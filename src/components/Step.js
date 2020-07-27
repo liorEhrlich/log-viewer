@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import StepLogs from "./StepLogs";
-import { STEP_STATUSES } from "./constants";
-import StatusLabel from "./components/StatusLabel";
+import { STEP_STATUSES } from "../constants";
+import StatusLabel from "./StatusLabel";
 
 const Step = ({ step, onStepComplete }) => {
   const [stepStatus, setStepStatus] = useState(STEP_STATUSES["running"]);
