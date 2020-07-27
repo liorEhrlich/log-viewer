@@ -31,11 +31,6 @@ const BuildOverview = ({
         <DetailTitle>Start Time</DetailTitle>
         <DetailValue>{buildStartTime}</DetailValue>
       </Details>
-
-      <Details>
-        <DetailTitle>Duration</DetailTitle>
-        <DetailValue>{buildDuration}</DetailValue>
-      </Details>
     </Wrapper>
   );
 };
