@@ -1,4 +1,4 @@
-**Log Viewer
+Log Viewer
 
 View all your build logs with teminal like screens.
 
