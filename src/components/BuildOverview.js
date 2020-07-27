@@ -4,7 +4,6 @@ import styled from "styled-components";
 import StatusLabel from "./StatusLabel";
 import {
   convertEpochToDateString,
-  getMinutesBetweenEpochTimes,
 } from "../utils/utils";
 import {STEP_STATUSES} from "../constants";
 
@@ -12,11 +11,9 @@ const BuildOverview = ({
   buildStatus,
   buildSteps,
   buildStart,
-  buildFinish,
   currentStep,
 }) => {
   const buildStartTime = convertEpochToDateString(buildStart);
-  const buildDuration = getMinutesBetweenEpochTimes(buildFinish, buildStart);
 
   return (
     <Wrapper>
