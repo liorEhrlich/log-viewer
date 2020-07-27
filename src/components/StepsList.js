@@ -7,8 +7,8 @@ const StepsList = ({ stepsList, currentStep, setCurrentStep }) => {
   const [shownSteps, setShownSteps] = useState([]);
 
   useEffect(function updateShownSteps() {
-    setShownSteps([...shownSteps, stepsList[currentStep] ])
-  },[currentStep])
+    setShownSteps(currentSteps => ([...currentSteps, stepsList[currentStep] ]))
+  },[currentStep, stepsList])
 
   return (
     <Wrapper>

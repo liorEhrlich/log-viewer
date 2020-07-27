@@ -27,7 +27,6 @@ const App = () => {
         buildStatus={logs.status}
         buildSteps={logs.steps.length}
         buildStart={logs.data.started}
-        buildFinish={logs.data.finished}
         currentStep={currentStep}
       />
 
