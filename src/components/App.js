@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 
-import logs from "./logs.json";
-import theme from "./theme";
+import logs from "../logs.json";
+import theme from "../theme";
 import BuildOverview from "./BuildOverview";
 import StepsList from "./StepsList";
 

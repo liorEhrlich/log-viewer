@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import StepLogs from "./StepLogs";
 import { STEP_STATUSES } from "./constants";
-import StatusLabel from "./StatusLabel";
+import StatusLabel from "./components/StatusLabel";
 
 const Step = ({ step, onStepComplete }) => {
   const [stepStatus, setStepStatus] = useState(STEP_STATUSES["running"]);

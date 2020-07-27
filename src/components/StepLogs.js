@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import streamLogs from "./utils/mockStreamLogsUtil";
+import streamLogs from "../utils/mockStreamLogsUtil";
 
 const StepLogs = ({ logs, onComplete, isMinimized }) => {
   const [shownLogs, setShownLogs] = useState([]);

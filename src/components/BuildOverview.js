@@ -5,8 +5,8 @@ import StatusLabel from "./StatusLabel";
 import {
   convertEpochToDateString,
   getMinutesBetweenEpochTimes,
-} from "./utils/utils";
-import {STEP_STATUSES} from "./constants";
+} from "../utils/utils";
+import {STEP_STATUSES} from "../constants";
 
 const BuildOverview = ({
   buildStatus,
