@@ -17,7 +17,7 @@ const StepLogs = ({ logs, onComplete, isMinimized }) => {
   useEffect(
     function updateShownLogs() {
       if (newLog) {
-        setShownLogs([...shownLogs, newLog]);
+        setShownLogs(currentLogs => [...currentLogs, newLog]);
       }
     },
     [newLog]
@@ -29,7 +29,7 @@ const StepLogs = ({ logs, onComplete, isMinimized }) => {
         onComplete();
       }
     },
-    [shownLogs]
+    [shownLogs, logs.length]
   );
 
   return (

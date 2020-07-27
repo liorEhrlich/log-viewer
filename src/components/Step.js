@@ -12,6 +12,7 @@ const Step = ({ step, onStepComplete }) => {
     onStepComplete();
     setStepStatus(step.status);
   };
+
   return (
     <Wrapper>
       <StatusLabel status={STEP_STATUSES[stepStatus]}>{stepStatus}</StatusLabel>
