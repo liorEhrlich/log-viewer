@@ -61,6 +61,7 @@ const StepTitle = styled.div`
   border: 2px solid lightgrey;
   border-radius: 4px;
   box-shadow: 10px 10px 21px -17px grey;
+  background-color: ${props => props.theme.secondaryBackground};
 `;
 
 export default Step;

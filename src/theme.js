@@ -2,7 +2,7 @@ const theme = {
   primary: "#11B5A4",
   secondary: "#00897B",
   background: "#ffffff",
-  secondaryBackground: "#F5FAF9",
+  secondaryBackground: "#ddfcfb",
   success: "#11b560",
   fail: "#b51114",
   running: "#e4e015",

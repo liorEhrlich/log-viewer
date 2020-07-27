@@ -33,12 +33,12 @@ const BuildOverview = ({
 };
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.background};
   border-bottom: 1px solid ${(props) => props.theme.primary};
   height: 80px;
   display: flex;
   align-items: center;
   padding: 0 20px;
+  background-color: ${props => props.theme.secondaryBackground};
 `;
 
 const Details = styled.div`
